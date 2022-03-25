@@ -1,0 +1,7 @@
+.logo__img {
+  height: 33px;
+  width: 142px;
+  padding-top: 45px;
+  background: url(../../../images/logo.png) center no-repeat;
+  color: #fff;
+}
