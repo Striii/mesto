@@ -1,1 +1,7 @@
-.grid__like {}
+.grid__like {
+  cursor: pointer;
+}
+
+.grid__like:hover {
+  cursor: pointer;
+}
