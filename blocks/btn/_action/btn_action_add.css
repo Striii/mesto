@@ -5,3 +5,23 @@
   background: transparent url(../../../images/plus.png) center no-repeat;
   border-radius: 2px;
 }
+
+@media (min-width: 645px) and (max-width: 768px) {
+  .btn_action_add {
+    width: 75px;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 645px) {
+  .btn_action_add {
+    width: 150px;
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 415px) {
+  .btn_action_add {
+    width: 100%;
+    margin-top: 36px;
+  }
+}

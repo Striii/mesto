@@ -6,3 +6,17 @@
   font-weight: 500;
   line-height: 48px;
 }
+
+@media (min-width: 425px) and (max-width: 645px) {
+  .profile__name {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 425px) {
+  .profile__name {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}
