@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 768px) {
-  .profile__info {
+  .profile__wrap {
     margin-top: 25px;
   }
 }
