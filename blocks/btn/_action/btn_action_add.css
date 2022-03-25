@@ -1,0 +1,7 @@
+.btn_action_add {
+  height: 50px;
+  width: 150px;
+  border: 2px solid #fff;
+  background: transparent url(../../../images/plus.png) center no-repeat;
+  border-radius: 2px;
+}

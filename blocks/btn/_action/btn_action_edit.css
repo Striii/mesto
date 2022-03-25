@@ -1,0 +1,8 @@
+.btn_action_edit {
+  height: 24px;
+  width: 24px;
+  margin-right: auto;
+  margin-left: 18px;
+  border: 1px solid #fff;
+  background: transparent url(../../../images/edit.png) center no-repeat;
+}
