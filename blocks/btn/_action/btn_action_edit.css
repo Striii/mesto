@@ -6,3 +6,8 @@
   border: 1px solid #fff;
   background: transparent url(../../../images/edit.png) center no-repeat;
 }
+
+.btn_action_edit:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}

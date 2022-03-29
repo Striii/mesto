@@ -1,7 +1,14 @@
 .grid__like {
+  height: 19px;
+  width: 22px;
+  background: url(../../../images/heart.png) center no-repeat;
+  object-fit: cover;
+  color: rgba(0, 0, 0, 1);
   cursor: pointer;
+  z-index: 2;
 }
 
 .grid__like:hover {
-  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.5s;
 }

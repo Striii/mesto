@@ -1,9 +1,14 @@
 .profile__info {
+  width: 50%;
   margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @media (max-width: 645px) {
   .profile__info {
     margin: 0;
+    width: 90%;
   }
 }

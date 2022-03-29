@@ -1,0 +1,7 @@
+.grid__like_activ {
+  height: 19px;
+  width: 22px;
+  background: url(../../../../images/heart-black.png) center no-repeat;
+  color: rgba(0, 0, 0, 1);
+  display: block;
+}

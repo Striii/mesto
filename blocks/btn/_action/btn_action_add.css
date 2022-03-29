@@ -6,15 +6,13 @@
   border-radius: 2px;
 }
 
-@media (min-width: 645px) and (max-width: 768px) {
-  .btn_action_add {
-    width: 75px;
-  }
+.btn_action_add:hover {
+  opacity: 0.5;
+  transition: 0.5s;
 }
 
 @media (min-width: 415px) and (max-width: 645px) {
   .btn_action_add {
-    width: 150px;
     margin-top: 36px;
   }
 }

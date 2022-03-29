@@ -20,9 +20,9 @@
     <div class="profile__info">
       <div class="profile__wrap">
         <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <button class="btn btn_action_edit"></button>
+        <p class="profile__hobby">Исследователь океана</p>
       </div>
-      <p class="profile__hobby">Исследователь океана</p>
+      <button class="btn btn_action_edit"></button>
     </div>
     <button class="btn btn_action_add"></button>
   </section>
@@ -33,47 +33,60 @@
         <img src="./images/dombay.jpg" alt="Домбай" class="grid__img">
         <div class="grid__innit">
           <h2 class="grid__title">Домбай</h2>
-          <img src="./images/heart.png" alt="лайк" class="grid__like">
+          <div class="grid__like"></div>
         </div>
       </li>
       <li class="grid__card">
         <img src="./images/paporotnik.jpg" alt="папоротник" class="grid__img">
         <div class="grid__innit">
           <h2 class="grid__title">Папоротник маленький для проверки переполнения</h2>
-          <img src="./images/heart.png" alt="лайк" class="grid__like">
+          <div class="grid__like"></div>
         </div>
       </li>
       <li class="grid__card">
         <img src="./images/karachaevsk.jpg" alt="Домбай" class="grid__img">
         <div class="grid__innit">
           <h2 class="grid__title">Карачаевск</h2>
-          <img src="./images/heart.png" alt="лайк" class="grid__like">
+          <div class="grid__like"></div>
         </div>
       </li>
       <li class="grid__card">
         <img src="./images/dombay1.jpg" alt="Домбай" class="grid__img">
         <div class="grid__innit">
           <h2 class="grid__title">Домбай</h2>
-          <img src="./images/heart.png" alt="лайк" class="grid__like">
+          <div class="grid__like"></div>
         </div>
       </li>
       <li class="grid__card">
         <img src="./images/elbrus1.jpg" alt="Домбай" class="grid__img">
         <div class="grid__innit">
           <h2 class="grid__title">Эльбрус</h2>
-          <img src="./images/heart.png" alt="лайк" class="grid__like">
+          <div class="grid__like"></div>
         </div>
       </li>
       <li class="grid__card">
         <img src="./images/karachaevsk1.jpg" alt="Домбай" class="grid__img">
         <div class="grid__innit">
           <h2 class="grid__title">Карачаевск</h2>
-          <img src="./images/heart.png" alt="лайк" class="grid__like">
+          <div class="grid__like"></div>
         </div>
       </li>
     </ul>
   </section>
   <footer class="footer container">&copy; 2020 Mesto Russia</footer>
+
+  <div class="popap">
+    <div class="popap__content">
+      <button class="btn btn_action_close"></button>
+      <h2 class="popap__title">Редактировать профиль</h2>
+      <form class="popap__form">
+        <input type="text" class="popap__name">
+        <input type="text" class="popap__hobby">
+        <button type="submit" class="btn btn_action_save">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./script/index.js"></script>
 
 
 </body>

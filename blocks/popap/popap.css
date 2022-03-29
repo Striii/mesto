@@ -1,0 +1,22 @@
+  .popap {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 195px;
+  }
+  
+  @media (max-width: 768px) {
+    .popap {
+      padding: 123px 20px 0;
+    }
+  }
+  
+  @media (max-width: 415px) {
+    .popap {
+      padding: 123px 18px 0;
+    }
+  }
