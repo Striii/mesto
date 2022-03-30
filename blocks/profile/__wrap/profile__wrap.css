@@ -1,9 +1,9 @@
 .profile__wrap {
-  width: 90%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 @media (max-width: 768px) {

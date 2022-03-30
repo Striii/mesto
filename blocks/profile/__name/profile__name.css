@@ -1,16 +1,18 @@
 .profile__name {
+  width: 90%;
   color: #fff;
   margin: 0;
   font-family: Inter;
   font-size: 42px;
   font-weight: 500;
   line-height: 48px;
-  width: 90%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (min-width: 425px) and (max-width: 768px) {
   .profile__name {
-    width: 80%;
     font-size: 30px;
     line-height: 40px;
   }
@@ -18,7 +20,6 @@
 
 @media (max-width: 425px) {
   .profile__name {
-    width: 80%;
     font-size: 27px;
     line-height: 33px;
   }

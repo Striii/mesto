@@ -1,21 +1,17 @@
 const ActionEditBtn = document.querySelector('.btn_action_edit');
 const modalWindow = document.querySelector('.popap');
 const ModalCloseBtn = modalWindow.querySelector('.btn_action_close');
-let popapUserName = document.querySelector('.profile__name');
-let popapUserHobby = document.querySelector('.profile__hobby');
-let nameInput = document.querySelector('.popap__name');
-let nameHobby = document.querySelector('.popap__hobby');
-let myForm = document.querySelector('.popap__form');
-
-
-
+const popapUserName = document.querySelector('.profile__name');
+const popapUserHobby = document.querySelector('.profile__hobby');
+const nameInput = document.querySelector('.popap__name');
+const nameHobby = document.querySelector('.popap__hobby');
+const myForm = document.querySelector('.popap__form');
 
 function toggleModalWindow() {
     nameInput.value = popapUserName.textContent;
     nameHobby.value = popapUserHobby.textContent;
     modalWindow.classList.toggle('popap_is_activ');
 }
-
 
 function onOverlayClick(event) {
     if (event.target === event.currentTarget) {
@@ -27,21 +23,22 @@ ActionEditBtn.addEventListener('click', toggleModalWindow);
 ModalCloseBtn.addEventListener('click', toggleModalWindow);
 modalWindow.addEventListener('click', onOverlayClick);
 
-function inputPopapUserName(e) {
-    e.preventDefault();
-    popapUserName.value = nameInput.textContent;
-    popapUserHobby.value = nameHobby.textContent;
+function inputPopapUserName(event) {
+    event.preventDefault();
+    popapUserName.textContent = nameInput.value;
+    popapUserHobby.textContent = nameHobby.value;
     toggleModalWindow();
-    console.log(popapUserName);
 }
 
 myForm.addEventListener('submit', inputPopapUserName);
 
 
-const LikeWindow = document.querySelector('.grid__like');
+// let LikeWindow = document.querySelector('.grid__like'); //нужен счетчик, посмотреть какая реализация, при 1 лайк, при 0 дизлайк или тру фолс, а еще на разные карточки, пока работает на одну, значит не верная логика
+// LikeWindow = false;
 
-function toggleLike() {
-    LikeWindow.classList.toggle('grid__like_activ');
-}
+// function toggleLike() {
+// if {LikeWindow = false} 
+// else LikeWindow.classList.toggle('grid__like_activ');
+// }
 
-LikeWindow.addEventListener('click', toggleLike);
+// LikeWindow.addEventListener('click', toggleLike);
