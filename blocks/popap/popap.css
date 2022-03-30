@@ -14,9 +14,3 @@
       padding: 123px 20px 0;
     }
   }
-  
-  @media (max-width: 415px) {
-    .popap {
-      padding: 123px 18px 0;
-    }
-  }

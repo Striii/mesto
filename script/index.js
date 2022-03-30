@@ -10,7 +10,7 @@ const myForm = document.querySelector('.popap__form');
 function toggleModalWindow() {
     nameInput.value = popapUserName.textContent;
     nameHobby.value = popapUserHobby.textContent;
-    modalWindow.classList.toggle('popap_is_activ');
+    modalWindow.classList.toggle('popup_opened');
 }
 
 function onOverlayClick(event) {
@@ -31,14 +31,3 @@ function inputPopapUserName(event) {
 }
 
 myForm.addEventListener('submit', inputPopapUserName);
-
-
-// let LikeWindow = document.querySelector('.grid__like'); //нужен счетчик, посмотреть какая реализация, при 1 лайк, при 0 дизлайк или тру фолс, а еще на разные карточки, пока работает на одну, значит не верная логика
-// LikeWindow = false;
-
-// function toggleLike() {
-// if {LikeWindow = false} 
-// else LikeWindow.classList.toggle('grid__like_activ');
-// }
-
-// LikeWindow.addEventListener('click', toggleLike);
