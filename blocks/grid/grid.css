@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding-top: 50px;
 }
+
+@media (max-width:425px) {
+  .grid {
+    padding-top: 32px;
+  }
+}

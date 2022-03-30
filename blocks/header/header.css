@@ -4,3 +4,9 @@
   height: 74px;
   border-bottom: 1px solid #545454;
 }
+
+@media (max-width:425px) {
+  .header {
+    padding-top: 28px;
+  }
+}

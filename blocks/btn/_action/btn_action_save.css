@@ -10,3 +10,7 @@
   line-height: 22px;
   text-align: center;
 }
+
+.btn_action_save:hover {
+  opacity: 0.8;
+}

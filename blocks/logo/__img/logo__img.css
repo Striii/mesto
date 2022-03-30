@@ -4,3 +4,12 @@
   background: url(../../../images/logo.png) center no-repeat;
   color: #fff;
 }
+
+@media (max-width:425px) {
+  .logo__img {
+    height: 24px;
+    width: 103px;
+    background-size: cover;
+    margin-left: 10px;
+  }
+}
