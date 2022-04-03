@@ -1,33 +1,29 @@
-const ActionEditBtn = document.querySelector('.btn_action_edit');
-const modalWindow = document.querySelector('.popap');
-const ModalCloseBtn = modalWindow.querySelector('.btn_action_close');
-const popapUserName = document.querySelector('.profile__name');
-const popapUserHobby = document.querySelector('.profile__hobby');
-const nameInput = document.querySelector('.popap__name');
-const nameHobby = document.querySelector('.popap__hobby');
-const myForm = document.querySelector('.popap__form');
+const ActionEditBtn = document.querySelector('.profile__btn-edit');
+const modalWindow = document.querySelector('.popup');
+const ModalCloseBtn = modalWindow.querySelector('.popup__btn-close');
+const popupUserName = document.querySelector('.profile__name');
+const popupUserHobby = document.querySelector('.profile__hobby');
+const nameInput = document.querySelector('.popup__input_field_name');
+const nameHobby = document.querySelector('.popup__input_field_hobby');
+const myForm = document.querySelector('.popup__form');
 
-function toggleModalWindow() {
-    nameInput.value = popapUserName.textContent;
-    nameHobby.value = popapUserHobby.textContent;
-    modalWindow.classList.toggle('popup_opened');
+function openModalWindow() {
+    nameInput.value = popupUserName.textContent;
+    nameHobby.value = popupUserHobby.textContent;
+    modalWindow.classList.add('popup_opened');
 }
 
-function onOverlayClick(event) {
-    if (event.target === event.currentTarget) {
-        toggleModalWindow();
-    }
+function closeModalWindow() {
+    modalWindow.classList.remove('popup_opened');
 }
 
-ActionEditBtn.addEventListener('click', toggleModalWindow);
-ModalCloseBtn.addEventListener('click', toggleModalWindow);
-modalWindow.addEventListener('click', onOverlayClick);
-
-function inputPopapUserName(event) {
+function inputPopupUserName(event) {
     event.preventDefault();
-    popapUserName.textContent = nameInput.value;
-    popapUserHobby.textContent = nameHobby.value;
-    toggleModalWindow();
+    popupUserName.textContent = nameInput.value;
+    popupUserHobby.textContent = nameHobby.value;
+    closeModalWindow()
 }
 
-myForm.addEventListener('submit', inputPopapUserName);
+ActionEditBtn.addEventListener('click', openModalWindow);
+ModalCloseBtn.addEventListener('click', closeModalWindow);
+myForm.addEventListener('submit', inputPopupUserName);

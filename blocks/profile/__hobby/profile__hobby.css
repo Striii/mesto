@@ -1,9 +1,8 @@
 .profile__hobby {
-  min-width: 70%;
-  max-width: 90%;
+  width: 100%;
+  max-width: 294px;
   color: #fff;
   margin: 0;
-  font-family: Inter;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
@@ -25,6 +24,7 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 8px;
+    max-width: 189px;
   }
 }

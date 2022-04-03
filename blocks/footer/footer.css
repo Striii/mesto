@@ -1,15 +1,18 @@
 .footer {
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  text-align: left;
-  color: #545454;
-  padding-top: 66px;
+  padding-top: 53px;
+  margin: 0 auto;
 }
 
-@media (max-width:425px) {
+@media (min-width: 645px) and (max-width: 1023px) {
   .footer {
-    font-size: 14px;
-    padding-top: 38px;
+    max-width: 660px;
+  }
+}
+
+@media (max-width:768px) {
+  .footer {
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 36px;
   }
 }

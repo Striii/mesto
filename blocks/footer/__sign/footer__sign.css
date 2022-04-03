@@ -1,0 +1,12 @@
+.footer__sign {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  color: #545454;
+}
+
+@media (max-width:425px) {
+  .footer__sign {
+    font-size: 14px;
+  }
+}

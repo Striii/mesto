@@ -1,1 +1,23 @@
-.logo {}
+.logo {
+  display: inline-block;
+  height: 33px;
+  width: 142px;
+  background: url(../../../images/logo.svg) center no-repeat;
+  background-size: 142px 33px;
+  color: #fff;
+}
+
+@media (max-width:1024px) {
+  .logo {
+    margin-left: 19px;
+  }
+}
+
+@media (max-width:425px) {
+  .logo {
+    height: 24px;
+    width: 103px;
+    background-size: 103px 24px;
+    margin-left: 27px;
+  }
+}

@@ -1,10 +1,17 @@
 .profile {
   width: 100%;
-  padding-top: 40px;
+  padding-top: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+}
+
+@media (min-width: 645px) and (max-width: 1023px) {
+  .profile {
+    max-width: 660px;
+  }
 }
 
 @media (max-width: 645px) {
@@ -17,6 +24,6 @@
 
 @media (max-width: 425px) {
   .profile {
-    padding-top: 20px;
+    padding-top: 42px;
   }
 }

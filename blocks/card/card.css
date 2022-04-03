@@ -1,0 +1,23 @@
+.card {
+  max-width: 282px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:nth-child(odd) {
+  justify-self: end;
+}
+
+.card:nth-child(even) {
+  justify-self: start;
+}
+
+@media (max-width:650px) {
+  .card:nth-child(odd) {
+    justify-self: center;
+  }
+  .card:nth-child(even) {
+    justify-self: center;
+  }
+}
