@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   padding-top: 45px;
-  min-height: 55px;
+  min-height: 74px;
   border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
 
@@ -15,5 +15,6 @@
 @media (max-width:425px) {
   .header {
     padding-top: 28px;
+    min-height: 55px;
   }
 }

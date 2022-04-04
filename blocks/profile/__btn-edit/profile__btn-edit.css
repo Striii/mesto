@@ -1,7 +1,4 @@
 .profile__btn-edit {
-  position: absolute;
-  top: 15px;
-  right: -45px;
   height: 24px;
   width: 24px;
   margin-right: auto;
@@ -17,18 +14,11 @@
   opacity: 0.5;
 }
 
-@media (max-width:768px) {
-  .profile__btn-edit {
-    top: 10px;
-  }
-}
-
 @media (max-width:425px) {
   .profile__btn-edit {
     background-size: 7.5px;
     height: 18px;
     width: 18px;
-    top: 9px;
-    right: -28px;
+    margin-left: 10px;
   }
 }
