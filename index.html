@@ -28,60 +28,31 @@
       </div>
       <button type="button" aria-label="editing" class="profile__btn-add"></button>
     </section>
-    <!-- <section class="grid">
+    <section class="grid">
       <ul class="grid__wrap">
-        <li class="card">
-          <img src="./images/dombay.jpg" alt="Домбай" class="card__img">
-          <div class="card__innit">
-            <h2 class="card__title">Домбай</h2>
-            <button type="button" aria-label="addendum" class="card__btn-like"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/paporotnik.jpg" alt="папоротник" class="card__img">
-          <div class="card__innit">
-            <h2 class="card__title">Папоротник маленький для проверки переполнения</h2>
-            <button type="button" aria-label="like" class="card__btn-like"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/karachaevsk.jpg" alt="Домбай" class="card__img">
-          <div class="card__innit">
-            <h2 class="card__title">Карачаевск</h2>
-            <button type="button" aria-label="like" class="card__btn-like"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/dombay1.jpg" alt="Домбай" class="card__img">
-          <div class="card__innit">
-            <h2 class="card__title">Домбай</h2>
-            <button type="button" aria-label="like" class="card__btn-like"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/elbrus1.jpg" alt="Домбай" class="card__img">
-          <div class="card__innit">
-            <h2 class="card__title">Эльбрус</h2>
-            <button type="button" aria-label="like" class="card__btn-like"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/karachaevsk1.jpg" alt="Домбай" class="card__img">
-          <div class="card__innit">
-            <h2 class="card__title">Карачаевск</h2>
-            <button type="button" aria-label="like" class="card__btn-like"></button>
-          </div>
-        </li>
       </ul>
-    </section> -->
+    </section>
   </main>
 
   <footer class="footer">
     <p class="footer__sign">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <div class="popup">
-    <div class="popup__container">
+  <template class="template-card">
+    <li class="card">
+      <button type="button" aria-label="addendum" class="card__btn-del"></button>
+      <img src="" alt="" class="card__img">
+      <div class="card__innit">
+        <h2 class="card__title">
+        </h2>
+        <button type="button" aria-label="addendum" class="card__btn-like">
+                </button>
+      </div>
+    </li>
+  </template>
+
+  <div class="popup popup_type_name">
+    <div class="popup__container popup__container_window_profile">
       <button type="button" class="popup__btn-close"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form name="introduction" class="popup__form">
@@ -92,8 +63,33 @@
     </div>
   </div>
 
+  <div class="popup popup_type_add">
+    <div class="popup__container popup__container_window_card">
+      <button type="button" class="popup__btn-close"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form name="introduction" class="popup__form">
+        <input type="text" name="introname" class="popup__input popup__input_field_mesto" placeholder="Название">
+        <input type="text" name="introhobby" class="popup__input popup__input_field_img" placeholder="Ссылка на картинку">
+        <button type="submit" class="popup__btn-save">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_type_screen">
+    <div class="popup__container popup__container_window_fullscreen">
+      <button type="button" class="popup__btn-close"></button>
+      <form name="introduction" class="popup__form">
+        <input type="file" name="picture" accept="image/*" lass="popup__input popup__input_field_mesto">
+        <h2 class="popup__title">Редактировать профиль</h2>
+      </form>
+    </div>
+  </div>
+
+
 
   <script src="./script/index.js"></script>
+
+
 
 </body>
 
