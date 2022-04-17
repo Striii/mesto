@@ -38,18 +38,7 @@
     <p class="footer__sign">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <template class="template-card">
-    <li class="card">
-      <button type="button" aria-label="addendum" class="card__btn-del"></button>
-      <img src="" alt="" class="card__img">
-      <div class="card__innit">
-        <h2 class="card__title">
-        </h2>
-        <button type="button" aria-label="addendum" class="card__btn-like">
-                </button>
-      </div>
-    </li>
-  </template>
+
 
   <div class="popup popup_type_name">
     <div class="popup__container popup__container_window_profile">
@@ -67,9 +56,9 @@
     <div class="popup__container popup__container_window_card">
       <button type="button" class="popup__btn-close"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form name="introduction" class="popup__form">
-        <input type="text" name="introname" class="popup__input popup__input_field_mesto" placeholder="Название">
-        <input type="text" name="introhobby" class="popup__input popup__input_field_img" placeholder="Ссылка на картинку">
+      <form name="card" class="popup__form popup__form_card">
+        <input type="text" name="cardname" class="popup__input popup__input_field_mesto" placeholder="Название">
+        <input type="text" name="cardurlimg" class="popup__input popup__input_field_img" placeholder="Ссылка на картинку">
         <button type="submit" class="popup__btn-save">Сохранить</button>
       </form>
     </div>
@@ -85,7 +74,18 @@
     </div>
   </div>
 
-
+  <template class="template-card">
+    <li class="card">
+      <button type="button" aria-label="addendum" class="card__btn-del"></button>
+      <img src="" alt="" class="card__img">
+      <div class="card__innit">
+        <h2 class="card__title">
+        </h2>
+        <button type="button" aria-label="addendum" class="card__btn-like">
+                </button>
+      </div>
+    </li>
+  </template>
 
   <script src="./script/index.js"></script>
 
