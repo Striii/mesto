@@ -10,6 +10,7 @@
     left: 0;
     z-index: 3;
     transition: all 1s ease 0s;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
     opacity: 0;
     visibility: hidden;
   }

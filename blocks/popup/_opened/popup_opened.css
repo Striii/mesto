@@ -1,4 +1,5 @@
 .popup_opened {
   opacity: 1;
   visibility: visible;
+  transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
 }
