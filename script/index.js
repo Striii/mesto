@@ -12,8 +12,8 @@ const popupUserHobby = document.querySelector('.profile__hobby');
 const nameInput = document.querySelector('.popup__input_field_name');
 const nameHobby = document.querySelector('.popup__input_field_hobby');
 const myForm = document.querySelector('.popup__form');
-const popapImageFuulscreen = document.querySelector('.card__img-fuul');
-const popapImageSign = document.querySelector('.card__sign');
+const popapImageFuulscreen = document.querySelector('.popup__img-fuul');
+const popapImageSign = document.querySelector('.popup__sign');
 const listContainer = document.querySelector('.grid__wrap');
 const template = document.querySelector('.template-card');
 const myFormAddCard = document.querySelector('.popup__form_card');
@@ -44,6 +44,7 @@ const initialCards = [{
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+
 
 
 function renderCard() {
@@ -107,7 +108,7 @@ function inputPopupUserName(event) {
 }
 
 
-myFormAddCard.addEventListener('submit', handleAddCard);
+
 
 ActionEditBtn.addEventListener('click', () => {
     nameInput.value = popupUserName.textContent;
@@ -127,4 +128,5 @@ CloseBtncard.addEventListener('click', () => {
     closeModalWindow(modalWindowAdd)
 });
 
+myFormAddCard.addEventListener('submit', handleAddCard);
 myForm.addEventListener('submit', inputPopupUserName);
