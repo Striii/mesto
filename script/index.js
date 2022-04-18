@@ -83,7 +83,7 @@ const template = document.querySelector('.template-card');
 const myFormAddCard = document.querySelector('.popup__form_card');
 const inputNameMesto = document.querySelector('.popup__input_field_mesto');
 const inputFiledImg = document.querySelector('.popup__input_field_img');
-// const likeDislikeCard = document.querySelector('.card__btn-like');
+
 
 
 function renderCard() {
@@ -92,30 +92,32 @@ function renderCard() {
 }
 
 
-
 function getElement(item) {
     const getElementTemplate = template.content.cloneNode(true);
     const name = getElementTemplate.querySelector('.card__title');
     const link = getElementTemplate.querySelector('.card__img');
     const buttonDeleteCard = getElementTemplate.querySelector('.card__btn-del');
+    const buttonLike = getElementTemplate.querySelector('.card__btn-like');
+
     name.textContent = item.name;
     link.src = item.link;
     link.alt = item.name;
-    buttonDeleteCard.addEventListener("click", deleteCard)
+    buttonDeleteCard.addEventListener('click', deleteCard);
+    buttonLike.addEventListener('click', likeCard)
     return getElementTemplate;
 }
 
-// function removeCard() {}
+renderCard();
 
-function deleteCard(evt) {
-    const element = evt.target.closest('.card')
-    element.remove();
+function likeCard(e) {
+    e.target.classList.toggle('card__btn-like_activ');
+}
+
+function deleteCard(e) {
+    const card = e.target.closest('.card');
+    card.remove();
 };
 
-
-
-
-renderCard();
 
 function handleAddCard(e) {
     e.preventDefault();
@@ -123,6 +125,8 @@ function handleAddCard(e) {
     closeModalWindow(modalWindowAdd);
     myFormAddCard.reset();
 }
+
+
 
 
 myFormAddCard.addEventListener('submit', handleAddCard);

@@ -1,3 +1,7 @@
-.card__batn-like_activ {
+.card__btn-like_activ {
   background: url(../../../../images/heart-black.svg) center no-repeat;
+}
+
+.card__btn-like_activ:hover {
+  opacity: 0.5;
 }

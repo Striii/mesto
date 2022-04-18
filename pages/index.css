@@ -18,6 +18,7 @@
 @import url(../blocks/card/__btn-del/card__btn-del.css);
 @import url(../blocks/card/__title/card__title.css);
 @import url(../blocks/card/__btn-like/card__btn-like.css);
+@import url(../blocks/card/__btn-like/_activ/card__btn-like_activ.css);
 @import url(../blocks/card/__img/card__img.css);
 @import url(../blocks/card/__innit/card__innit.css);
 @import url(../blocks/footer/footer.css);
