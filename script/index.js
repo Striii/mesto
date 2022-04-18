@@ -83,20 +83,37 @@ const template = document.querySelector('.template-card');
 const myFormAddCard = document.querySelector('.popup__form_card');
 const inputNameMesto = document.querySelector('.popup__input_field_mesto');
 const inputFiledImg = document.querySelector('.popup__input_field_img');
+// const likeDislikeCard = document.querySelector('.card__btn-like');
+
 
 function renderCard() {
     const html = initialCards.map(getElement);
     listContainer.append(...html);
 }
 
+
+
 function getElement(item) {
     const getElementTemplate = template.content.cloneNode(true);
     const name = getElementTemplate.querySelector('.card__title');
     const link = getElementTemplate.querySelector('.card__img');
+    const buttonDeleteCard = getElementTemplate.querySelector('.card__btn-del');
     name.textContent = item.name;
     link.src = item.link;
+    link.alt = item.name;
+    buttonDeleteCard.addEventListener("click", deleteCard)
     return getElementTemplate;
 }
+
+// function removeCard() {}
+
+function deleteCard(evt) {
+    const element = evt.target.closest('.card')
+    element.remove();
+};
+
+
+
 
 renderCard();
 
@@ -106,5 +123,6 @@ function handleAddCard(e) {
     closeModalWindow(modalWindowAdd);
     myFormAddCard.reset();
 }
+
 
 myFormAddCard.addEventListener('submit', handleAddCard);
