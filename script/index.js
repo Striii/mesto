@@ -1,12 +1,12 @@
-const ActionEditBtn = document.querySelector('.profile__btn-edit');
-const ActionAddCard = document.querySelector('.profile__btn-add')
+const actionEditBtn = document.querySelector('.profile__btn-edit');
+const actionAddCard = document.querySelector('.profile__btn-add')
 const openModalWindowСommon = document.querySelector('.popup');
 const modalWindowName = document.querySelector('.popup_type_name');
 const modalWindowAdd = document.querySelector('.popup_type_add');
 const modalWindowScreen = document.querySelector('.popup_type_screen');
-const CloseBtnProfileName = modalWindowName.querySelector('.popup__btn-close');
-const CloseBtncard = modalWindowAdd.querySelector('.popup__btn-close');
-const CloseBtnmodalWindowScreen = modalWindowScreen.querySelector('.popup__btn-close');
+const closeBtnProfileName = modalWindowName.querySelector('.popup__btn-close');
+const closeBtncard = modalWindowAdd.querySelector('.popup__btn-close');
+const closeBtnmodalWindowScreen = modalWindowScreen.querySelector('.popup__btn-close');
 const popupUserName = document.querySelector('.profile__name');
 const popupUserHobby = document.querySelector('.profile__hobby');
 const nameInput = document.querySelector('.popup__input_field_name');
@@ -68,7 +68,7 @@ function getElement(item) {
         popapImageFuulscreen.src = item.link;
         popapImageSign.textContent = item.name;
     });
-    CloseBtnmodalWindowScreen.addEventListener('click', () => {
+    closeBtnmodalWindowScreen.addEventListener('click', () => {
         closeModalWindow(modalWindowScreen)
     });
     return getElementTemplate;
@@ -109,22 +109,21 @@ function inputPopupUserName(event) {
 
 
 
-
-ActionEditBtn.addEventListener('click', () => {
+actionEditBtn.addEventListener('click', () => {
     nameInput.value = popupUserName.textContent;
     nameHobby.value = popupUserHobby.textContent;
     openModalWindow(modalWindowName)
 });
 
-ActionAddCard.addEventListener('click', () => {
+actionAddCard.addEventListener('click', () => {
     openModalWindow(modalWindowAdd)
 });
 
-CloseBtnProfileName.addEventListener('click', () => {
+closeBtnProfileName.addEventListener('click', () => {
     closeModalWindow(modalWindowName)
 });
 
-CloseBtncard.addEventListener('click', () => {
+closeBtncard.addEventListener('click', () => {
     closeModalWindow(modalWindowAdd)
 });
 
