@@ -13,6 +13,7 @@ const nameInput = document.querySelector('.popup__input_field_name');
 const nameHobby = document.querySelector('.popup__input_field_hobby');
 const myForm = document.querySelector('.popup__form');
 const popapImageFuulscreen = document.querySelector('.popup__img-fuul');
+const popapImageFuulscreenAlt = document.querySelector('.popup__img-fuul');
 const popapImageSign = document.querySelector('.popup__sign');
 const listContainer = document.querySelector('.grid__wrap');
 const template = document.querySelector('.template-card');
@@ -67,6 +68,7 @@ function getElement(item) {
         openModalWindow(modalWindowScreen);
         popapImageFuulscreen.src = item.link;
         popapImageSign.textContent = item.name;
+        popapImageFuulscreenAlt.alt = item.name;
     });
     closeBtnmodalWindowScreen.addEventListener('click', () => {
         closeModalWindow(modalWindowScreen)
