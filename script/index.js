@@ -1,11 +1,11 @@
 const actionEditBtn = document.querySelector('.profile__btn-edit');
 const actionAddCard = document.querySelector('.profile__btn-add')
-const openModalWindowСommon = document.querySelector('.popup');
+const popup = document.querySelector('.popup');
 const modalWindowName = document.querySelector('.popup_type_name');
 const modalWindowAdd = document.querySelector('.popup_type_add');
 const modalWindowScreen = document.querySelector('.popup_type_screen');
 const closeBtnProfileName = modalWindowName.querySelector('.popup__btn-close');
-const closeBtncard = modalWindowAdd.querySelector('.popup__btn-close');
+const closeBtnCard = modalWindowAdd.querySelector('.popup__btn-close');
 const closeBtnModalWindowScreen = modalWindowScreen.querySelector('.popup__btn-close');
 const popupUserName = document.querySelector('.profile__name');
 const popupUserHobby = document.querySelector('.profile__hobby');
@@ -121,7 +121,7 @@ closeBtnProfileName.addEventListener('click', () => {
     closePopup(modalWindowName)
 });
 
-closeBtncard.addEventListener('click', () => {
+closeBtnCard.addEventListener('click', () => {
     closePopup(modalWindowAdd)
 });
 
