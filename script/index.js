@@ -70,9 +70,6 @@ function getElement(item) {
         popapImageSign.textContent = item.name;
         popapImageFuulscreenAlt.alt = item.name;
     });
-    closeBtnmodalWindowScreen.addEventListener('click', () => {
-        closeModalWindow(modalWindowScreen)
-    });
     return getElementTemplate;
 }
 
@@ -127,6 +124,10 @@ closeBtnProfileName.addEventListener('click', () => {
 
 closeBtncard.addEventListener('click', () => {
     closeModalWindow(modalWindowAdd)
+});
+
+closeBtnmodalWindowScreen.addEventListener('click', () => {
+    closeModalWindow(modalWindowScreen)
 });
 
 myFormAddCard.addEventListener('submit', handleAddCard);
