@@ -11,13 +11,13 @@ const popupUserName = document.querySelector('.profile__name');
 const popupUserHobby = document.querySelector('.profile__hobby');
 const nameInput = document.querySelector('.popup__input_field_name');
 const nameHobby = document.querySelector('.popup__input_field_hobby');
-const openingMyForm = document.querySelector('.popup__form');
+const openMyForm = document.querySelector('.popup__form');
 const popapImageFuulscreen = document.querySelector('.popup__img-fuul');
 const popapImageFuulscreenAlt = document.querySelector('.popup__img-fuul');
 const popapImageSign = document.querySelector('.popup__sign');
 const listContainer = document.querySelector('.grid__wrap');
 const template = document.querySelector('.template-card');
-const openingMyFormAddCard = document.querySelector('.popup__form_card');
+const openMyFormAddCard = document.querySelector('.popup__form_card');
 const inputNameMesto = document.querySelector('.popup__input_field_mesto');
 const inputFiledImg = document.querySelector('.popup__input_field_img');
 const initialCards = [{
@@ -82,7 +82,7 @@ function handleAddCard(e) {
     e.preventDefault();
     listContainer.prepend(getElement(({ name: inputNameMesto.value, link: inputFiledImg.value })));
     closeModalWindow(modalWindowAdd);
-    openingMyFormAddCard.reset();
+    openMyFormAddCard.reset();
 }
 
 function likeCard(e) {
@@ -130,5 +130,5 @@ closeBtnModalWindowScreen.addEventListener('click', () => {
     closeModalWindow(modalWindowScreen)
 });
 
-openingMyFormAddCard.addEventListener('submit', handleAddCard);
-openingMyForm.addEventListener('submit', openPopupUserName);
+openMyFormAddCard.addEventListener('submit', handleAddCard);
+openMyForm.addEventListener('submit', openPopupUserName);
