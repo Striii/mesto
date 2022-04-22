@@ -62,7 +62,7 @@ function getElement(item) {
     link.src = item.link;
     link.alt = item.name;
     buttonDeleteCard.addEventListener('click', deleteCard);
-    buttonLike.addEventListener('click', likeCard);
+    listContainer.addEventListener('click', likeCard);
     link.addEventListener('click', () => {
         openPopup(modalWindowScreen);
         popupFullScreen.src = item.link;
@@ -84,6 +84,8 @@ function handleAddCard(e) {
     openMyFormAddCard.reset();
 }
 
+
+
 function likeCard(e) {
     e.target.classList.toggle('card__btn-like_activ');
 }
@@ -104,7 +106,6 @@ function openPopupUserName(event) {
     popupUserHobby.textContent = nameHobby.value;
     closePopup(modalWindowName);
 }
-
 
 
 actionEditBtn.addEventListener('click', () => {
