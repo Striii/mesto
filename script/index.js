@@ -57,7 +57,6 @@ function getElement(item) {
     const name = getElementTemplate.querySelector('.card__title');
     const link = getElementTemplate.querySelector('.card__img');
     const buttonDeleteCard = getElementTemplate.querySelector('.card__btn-del');
-    const buttonLike = getElementTemplate.querySelector('.card__btn-like');
     name.textContent = item.name;
     link.src = item.link;
     link.alt = item.name;
@@ -87,9 +86,10 @@ function handleAddCard(e) {
 
 
 function likeCard(e) {
-    e.target.classList.toggle('card__btn-like_activ');
+    if (e.target.classList.contains('card__btn-like')) {
+        e.target.classList.toggle('card__btn-like_activ');
+    }
 }
-
 renderCard();
 
 function openPopup(popup) {
