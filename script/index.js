@@ -4,9 +4,6 @@ const popup = document.querySelector('.popup');
 const modalWindowName = document.querySelector('.popup_type_name');
 const modalWindowAdd = document.querySelector('.popup_type_add');
 const modalWindowScreen = document.querySelector('.popup_type_screen');
-const closeBtnProfileName = modalWindowName.querySelector('.popup__btn-close');
-const closeBtnCard = modalWindowAdd.querySelector('.popup__btn-close');
-const closeBtnModalWindowScreen = modalWindowScreen.querySelector('.popup__btn-close');
 const popupUserName = document.querySelector('.profile__name');
 const popupUserHobby = document.querySelector('.profile__hobby');
 const nameInput = document.querySelector('.popup__input_field_name');
@@ -57,11 +54,12 @@ function getElement(item) {
     const name = getElementTemplate.querySelector('.card__title');
     const link = getElementTemplate.querySelector('.card__img');
     const buttonDeleteCard = getElementTemplate.querySelector('.card__btn-del');
+    const buttonLike = getElementTemplate.querySelector('.card__btn-like');
     name.textContent = item.name;
     link.src = item.link;
     link.alt = item.name;
     buttonDeleteCard.addEventListener('click', deleteCard);
-    listContainer.addEventListener('click', likeCard);
+    buttonLike.addEventListener('click', likeCard);
     link.addEventListener('click', () => {
         openPopup(modalWindowScreen);
         popupFullScreen.src = item.link;
@@ -83,22 +81,30 @@ function handleAddCard(e) {
     openMyFormAddCard.reset();
 }
 
-
-
 function likeCard(e) {
-    if (e.target.classList.contains('card__btn-like')) {
-        e.target.classList.toggle('card__btn-like_activ');
-    }
+    e.target.classList.toggle('card__btn-like_activ');
 }
+
 renderCard();
 
+const handleEscUp = (event) => {
+    event.preventDefault();
+    const activePopup = document.querySelector('.popup_opened');
+    if (event.key === 'Escape') {
+        closePopup(activePopup);
+    };
+};
+
 function openPopup(popup) {
+    document.addEventListener('keydown', handleEscUp); // 
     popup.classList.add('popup_opened')
 }
 
 function closePopup(popup) {
+    document.removeEventListener('keydown', handleEscUp); // 
     popup.classList.remove('popup_opened');
 }
+
 
 function openPopupUserName(event) {
     event.preventDefault();
@@ -106,6 +112,25 @@ function openPopupUserName(event) {
     popupUserHobby.textContent = nameHobby.value;
     closePopup(modalWindowName);
 }
+
+
+
+const popupClose = document.querySelectorAll('.popup__btn-close');
+if (popupClose.length > 0) {
+    for (let index = 0; index < popupClose.length; index++) {
+        const element = popupClose[index];
+        element.addEventListener('click', function(event) {
+            closePopup(element.closest('.popup'));
+        });
+    }
+}
+
+
+
+
+
+
+
 
 
 actionEditBtn.addEventListener('click', () => {
@@ -118,17 +143,6 @@ actionAddCard.addEventListener('click', () => {
     openPopup(modalWindowAdd)
 });
 
-closeBtnProfileName.addEventListener('click', () => {
-    closePopup(modalWindowName)
-});
-
-closeBtnCard.addEventListener('click', () => {
-    closePopup(modalWindowAdd)
-});
-
-closeBtnModalWindowScreen.addEventListener('click', () => {
-    closePopup(modalWindowScreen)
-});
 
 openMyFormAddCard.addEventListener('submit', handleAddCard);
 openMyForm.addEventListener('submit', openPopupUserName);
