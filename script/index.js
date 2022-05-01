@@ -87,49 +87,51 @@ function likeCard(e) {
 
 renderCard();
 
-const handleEscUp = (event) => {
-    event.preventDefault();
-    const activePopup = document.querySelector('.popup_opened');
-    if (event.key === 'Escape') {
+const handleEscUp = (e) => {
+    const activePopup = document.querySelector('.popup_opened')
+    if (e.key === 'Escape') {
         closePopup(activePopup);
     };
 };
 
-function openPopup(popup) {
-    document.addEventListener('keydown', handleEscUp); // 
-    popup.classList.add('popup_opened')
+
+const overlay = (e) => {
+    const activePopupOverlay = document.querySelector('.popup_opened')
+    if (e.target = e.currentTarget) {
+        closePopup(activePopupOverlay);
+    }
 }
-
-function closePopup(popup) {
-    document.removeEventListener('keydown', handleEscUp); // 
-    popup.classList.remove('popup_opened');
-}
-
-
-function openPopupUserName(event) {
-    event.preventDefault();
-    popupUserName.textContent = nameInput.value;
-    popupUserHobby.textContent = nameHobby.value;
-    closePopup(modalWindowName);
-}
-
-
 
 const popupClose = document.querySelectorAll('.popup__btn-close');
 if (popupClose.length > 0) {
-    for (let index = 0; index < popupClose.length; index++) {
-        const element = popupClose[index];
-        element.addEventListener('click', function(event) {
+    for (let i = 0; i < popupClose.length; i++) {
+        const element = popupClose[i];
+        element.addEventListener('click', function(e) {
             closePopup(element.closest('.popup'));
         });
     }
 }
 
 
+function openPopup(popup) {
+    document.addEventListener('keydown', handleEscUp);
+    popup.addEventListener('click', overlay)
+    popup.classList.add('popup_opened')
+}
+
+function closePopup(popup) {
+    document.removeEventListener('keydown', handleEscUp);
+    popup.removeEventListener('click', overlay)
+    popup.classList.remove('popup_opened');
+}
 
 
-
-
+function openPopupUserName(e) {
+    e.preventDefault();
+    popupUserName.textContent = nameInput.value;
+    popupUserHobby.textContent = nameHobby.value;
+    closePopup(modalWindowName);
+}
 
 
 
@@ -142,6 +144,7 @@ actionEditBtn.addEventListener('click', () => {
 actionAddCard.addEventListener('click', () => {
     openPopup(modalWindowAdd)
 });
+
 
 
 openMyFormAddCard.addEventListener('submit', handleAddCard);
