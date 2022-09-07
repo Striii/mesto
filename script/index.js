@@ -44,6 +44,7 @@ const initialCards = [{
 
 
 
+
 function renderCard() {
     const html = initialCards.map(getElement);
     listContainer.append(...html);
@@ -69,45 +70,50 @@ function getElement(item) {
     return getElementTemplate;
 }
 
-function deleteCard(e) {
-    const card = e.target.closest('.card');
+function deleteCard(evt) {
+    const card = evt.target.closest('.card');
     card.remove();
 };
 
-function handleAddCard(e) {
-    e.preventDefault();
+function handleAddCard(evt) {
+    evt.preventDefault();
     listContainer.prepend(getElement(({ name: inputNameMesto.value, link: inputFiledImg.value })));
     closePopup(modalWindowAdd);
     openMyFormAddCard.reset();
+
 }
 
-function likeCard(e) {
-    e.target.classList.toggle('card__btn-like_activ');
+function likeCard(evt) {
+    evt.target.classList.toggle('card__btn-like_activ');
 }
 
 renderCard();
 
-const handleEscUp = (e) => {
+const handleEscUp = (evt) => {
     const activePopup = document.querySelector('.popup_opened')
-    if (e.key === 'Escape') {
+    if (evt.key === 'Escape') {
         closePopup(activePopup);
+        openMyFormAddCard.reset();
     };
 };
 
 
-const overlay = (e) => {
+const overlay = (evt) => {
     const activePopupOverlay = document.querySelector('.popup_opened')
-    if (e.target = e.currentTarget) {
+    if (evt.target === evt.currentTarget) {
         closePopup(activePopupOverlay);
+        openMyFormAddCard.reset();
     }
 }
 
 const popupClose = document.querySelectorAll('.popup__btn-close');
 if (popupClose.length > 0) {
     for (let i = 0; i < popupClose.length; i++) {
+        console.log(popupClose);
         const element = popupClose[i];
         element.addEventListener('click', function(e) {
             closePopup(element.closest('.popup'));
+            openMyFormAddCard.reset();
         });
     }
 }
@@ -126,8 +132,8 @@ function closePopup(popup) {
 }
 
 
-function openPopupUserName(e) {
-    e.preventDefault();
+function openPopupUserName(evt) {
+    evt.preventDefault();
     popupUserName.textContent = nameInput.value;
     popupUserHobby.textContent = nameHobby.value;
     closePopup(modalWindowName);
@@ -139,12 +145,15 @@ actionEditBtn.addEventListener('click', () => {
     nameInput.value = popupUserName.textContent;
     nameHobby.value = popupUserHobby.textContent;
     openPopup(modalWindowName)
+
 });
+
+
 
 actionAddCard.addEventListener('click', () => {
-    openPopup(modalWindowAdd)
-});
+    openPopup(modalWindowAdd);
 
+});
 
 
 openMyFormAddCard.addEventListener('submit', handleAddCard);
