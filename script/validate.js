@@ -4,27 +4,29 @@ const validationConfig = {
     submitButtonSelector: '.popup__btn-save',
     inactiveButtonClass: 'popup__btn-disabled',
     inputErrorClass: 'popup__input_error',
-    errorClass: 'popup__error_visible'
+    errorClass: '.popup__input-error_active'
 };
 
 
-function disableButton(button, config) {
-    button.classList.add(config.inactiveButtonClass);
-    button.setAttribute('disabled', 'disabled')
-}
 
-function removeButton(button, config) {
-    button.classList.remove(config.inactiveButtonClass);
+export const disableButton = (button) => {
+    button.classList.add(validationConfig.inactiveButtonClass);
+    button.setAttribute('disabled', 'disabled');
+};
+
+const removeButton = (button) => {
+    button.classList.remove(validationConfig.inactiveButtonClass);
     button.removeAttribute('disabled');
 }
 
 
-function toggleButtonState(inputs, button, config) {
+
+function toggleButtonState(inputs, button) {
     const hasErrors = inputs.some(input => !input.validity.valid);
     if (hasErrors) {
-        disableButton(button, config);
+        disableButton(button);
     } else {
-        removeButton(button, config);
+        removeButton(button);
     }
 }
 
@@ -32,9 +34,11 @@ function validateInput(form, input, config) {
     const error = form.querySelector(`#${input.id}-error`);
     if (!input.validity.valid) {
         input.classList.add(config.inputErrorClass)
+        input.classList.add(config.errorClass)
         error.textContent = input.validationMessage
     } else {
         input.classList.remove(config.inputErrorClass)
+        input.classList.remove(config.errorClass)
         error.textContent = ''
     }
 }

@@ -40,35 +40,35 @@
   </footer>
 
 
-  <div class="popup popup_type_name">
+  <div class="popup popup__type_name">
     <div class="popup__container popup__container_window_profile">
       <button type="button" class="popup__btn-close"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form name="introduction" class="popup__form" novalidate>
         <input type="text" id="name-input" required minlength="2" maxlength="40" name="introname" class="popup__input popup__input_field_name">
-        <span id="name-input-error" class="input__error"></span>
+        <span id="name-input-error" class="popup__span"></span>
         <input type="text" id="hobby-input" required minlength="2" maxlength="200" name="introhobby" class="popup__input popup__input_field_hobby">
-        <span id="hobby-input-error" class="input__error"></span>
+        <span id="hobby-input-error" class="popup__span"></span>
         <button type="submit" class="popup__btn-save">Сохранить</button>
       </form>
     </div>
   </div>
 
-  <div class="popup popup_type_add">
+  <div class="popup popup__type_add">
     <div class="popup__container popup__container_window_card">
       <button type="button" class="popup__btn-close"></button>
       <h2 class="popup__title">Новое место</h2>
       <form name="card" class="popup__form popup__form_card" novalidate>
         <input type="text" id="mesto-input" required minlength="2" maxlength="30" name="cardname" class="popup__input popup__input_field_mesto" placeholder="Название">
-        <span id="mesto-input-error" class="input__error"></span>
+        <span id="mesto-input-error" class="popup__span"></span>
         <input type="url" id="url-input" required name="cardurlimg" class="popup__input popup__input_field_img" placeholder="Ссылка на картинку">
-        <span id="url-input-error" class="input__error"></span>
-        <button type="submit" class="popup__btn-save " id="btndis">Сохранить</button>
+        <span id="url-input-error" class="popup__span"></span>
+        <button type="submit" class="popup__btn-save ">Сохранить</button>
       </form>
     </div>
   </div>
 
-  <div class="popup popup_type_screen">
+  <div class="popup popup__type_screen">
     <figure class="popup__figure">
       <button type="button" class="popup__btn-close"></button>
       <img src="#" alt="#" class="popup__img-fuul">
@@ -90,8 +90,8 @@
     </li>
   </template>
 
-  <script src="./script/validate.js"></script>
-  <script src="./script/index.js"></script>
+  <script type="module" src="./script/validate.js"></script>
+  <script type="module" src="./script/index.js"></script>
 
   <!-- <script src="./script/vald.js"></script> -->
 

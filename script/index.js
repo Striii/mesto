@@ -1,9 +1,10 @@
+import { disableButton } from './validate.js';
 const actionEditBtn = document.querySelector('.profile__btn-edit');
 const actionAddCard = document.querySelector('.profile__btn-add')
 const popup = document.querySelector('.popup');
-const modalWindowName = document.querySelector('.popup_type_name');
-const modalWindowAdd = document.querySelector('.popup_type_add');
-const modalWindowScreen = document.querySelector('.popup_type_screen');
+const modalWindowName = document.querySelector('.popup__type_name');
+const modalWindowAdd = document.querySelector('.popup__type_add');
+const modalWindowScreen = document.querySelector('.popup__type_screen');
 const popupUserName = document.querySelector('.profile__name');
 const popupUserHobby = document.querySelector('.profile__hobby');
 const nameInput = document.querySelector('.popup__input_field_name');
@@ -80,7 +81,6 @@ function handleAddCard(evt) {
     listContainer.prepend(getElement(({ name: inputNameMesto.value, link: inputFiledImg.value })));
     closePopup(modalWindowAdd);
     openMyFormAddCard.reset();
-
 }
 
 function likeCard(evt) {
@@ -90,18 +90,18 @@ function likeCard(evt) {
 renderCard();
 
 const handleEscUp = (evt) => {
-    const activePopup = document.querySelector('.popup_opened')
+    const activepopup = document.querySelector('.popup_opened')
     if (evt.key === 'Escape') {
-        closePopup(activePopup);
+        closePopup(activepopup);
         openMyFormAddCard.reset();
     };
 };
 
 
 const overlay = (evt) => {
-    const activePopupOverlay = document.querySelector('.popup_opened')
+    const activepopupOverlay = document.querySelector('.popup_opened')
     if (evt.target === evt.currentTarget) {
-        closePopup(activePopupOverlay);
+        closePopup(activepopupOverlay);
         openMyFormAddCard.reset();
     }
 }
@@ -109,7 +109,6 @@ const overlay = (evt) => {
 const popupClose = document.querySelectorAll('.popup__btn-close');
 if (popupClose.length > 0) {
     for (let i = 0; i < popupClose.length; i++) {
-        // console.log(popupClose);
         const element = popupClose[i];
         element.addEventListener('click', function(e) {
             closePopup(element.closest('.popup'));
@@ -123,12 +122,14 @@ function openPopup(popup) {
     document.addEventListener('keydown', handleEscUp);
     popup.addEventListener('click', overlay)
     popup.classList.add('popup_opened')
+
 }
 
 function closePopup(popup) {
     document.removeEventListener('keydown', handleEscUp);
     popup.removeEventListener('click', overlay)
     popup.classList.remove('popup_opened');
+
 }
 
 
@@ -145,14 +146,15 @@ actionEditBtn.addEventListener('click', () => {
     nameInput.value = popupUserName.textContent;
     nameHobby.value = popupUserHobby.textContent;
     openPopup(modalWindowName)
-
 });
+
 
 
 
 actionAddCard.addEventListener('click', () => {
     openPopup(modalWindowAdd);
-    document.querySelector('#btndis').setAttribute("disabled", "true")
+    const butt = modalWindowAdd.querySelector('.popup__btn-save')
+    disableButton(butt);
 });
 
 
