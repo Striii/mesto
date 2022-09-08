@@ -4,7 +4,7 @@
   margin-right: auto;
   margin-left: 18px;
   border: 1px solid #fff;
-  background: transparent url(../../../images/edit.svg) center no-repeat;
+  background: transparent url(../../../../images/edit.svg) center no-repeat;
   transition: 0.5s;
   background-size: 10px;
   cursor: pointer;
