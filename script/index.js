@@ -1,10 +1,9 @@
 import { disableButton } from './validate.js';
 const actionEditBtn = document.querySelector('.profile__btn-edit');
 const actionAddCard = document.querySelector('.profile__btn-add')
-const popup = document.querySelector('.popup');
-const modalWindowName = document.querySelector('.popup__type_name');
-const modalWindowAdd = document.querySelector('.popup__type_add');
-const modalWindowScreen = document.querySelector('.popup__type_screen');
+const modalWindowName = document.querySelector('.popup_type_name');
+const modalWindowAdd = document.querySelector('.popup_type_add');
+const modalWindowScreen = document.querySelector('.popup_type_screen');
 const popupUserName = document.querySelector('.profile__name');
 const popupUserHobby = document.querySelector('.profile__hobby');
 const nameInput = document.querySelector('.popup__input_field_name');
