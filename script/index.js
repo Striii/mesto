@@ -109,7 +109,7 @@ const overlay = (evt) => {
 const popupClose = document.querySelectorAll('.popup__btn-close');
 if (popupClose.length > 0) {
     for (let i = 0; i < popupClose.length; i++) {
-        console.log(popupClose);
+        // console.log(popupClose);
         const element = popupClose[i];
         element.addEventListener('click', function(e) {
             closePopup(element.closest('.popup'));
@@ -152,7 +152,7 @@ actionEditBtn.addEventListener('click', () => {
 
 actionAddCard.addEventListener('click', () => {
     openPopup(modalWindowAdd);
-
+    document.querySelector('#btndis').setAttribute("disabled", "true")
 });
 
 
