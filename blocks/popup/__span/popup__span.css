@@ -2,5 +2,7 @@
   font-size: 12px;
   font-weight: 400;
   color: rgba(255, 0, 0, 1);
-  height: 28px;
+  /* height: 28px; */
+  position: absolute;
+  z-index: 1;
 }
