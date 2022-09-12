@@ -126,12 +126,15 @@ actionEditBtn.addEventListener('click', () => {
     openPopup(modalWindowName)
 });
 
-actionAddCard.addEventListener('click', () => {
+
+
+
+function openPopapAddCard() {
     openPopup(modalWindowAdd);
     disableButton(buttonDisable, validationConfig);
     openMyFormAddCard.reset();
-});
+};
 
-
+actionAddCard.addEventListener('click', openPopapAddCard);
 openMyFormAddCard.addEventListener('submit', handleAddCard);
 openMyForm.addEventListener('submit', openPopupUserName);
