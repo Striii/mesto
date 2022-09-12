@@ -96,36 +96,23 @@ const handleEscUp = (evt) => {
 };
 
 
-const overlay = (evt) => {
-    const activepopupOverlay = document.querySelector('.popup_opened')
-    if (evt.target === evt.currentTarget) {
-        closePopup(activepopupOverlay);
-        openMyFormAddCard.reset();
-    }
-}
+const ClosePopupClikOverlay = (evt) => {
+    if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__btn-close')) {
+        closePopup(evt.currentTarget);
+    };
 
-const popupClose = document.querySelectorAll('.popup__btn-close');
-if (popupClose.length > 0) {
-    for (let i = 0; i < popupClose.length; i++) {
-        const element = popupClose[i];
-        element.addEventListener('click', function(e) {
-            closePopup(element.closest('.popup'));
-            openMyFormAddCard.reset();
-        });
-    }
 }
-
 
 function openPopup(popup) {
     document.addEventListener('keydown', handleEscUp);
-    popup.addEventListener('click', overlay)
+    popup.addEventListener('click', ClosePopupClikOverlay)
     popup.classList.add('popup_opened')
 
 }
 
 function closePopup(popup) {
     document.removeEventListener('keydown', handleEscUp);
-    popup.removeEventListener('click', overlay)
+    popup.removeEventListener('click', ClosePopupClikOverlay)
     popup.classList.remove('popup_opened');
 
 }
