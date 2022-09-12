@@ -92,7 +92,6 @@ const handleEscUp = (evt) => {
     const activepopup = document.querySelector('.popup_opened')
     if (evt.key === 'Escape') {
         closePopup(activepopup);
-        openMyFormAddCard.reset();
     };
 };
 
