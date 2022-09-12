@@ -7,49 +7,47 @@ const validationConfig = {
     errorClass: '.popup__input-error_active'
 };
 
-
-
-export const disableButton = (button) => {
-    button.classList.add(validationConfig.inactiveButtonClass);
-    button.setAttribute('disabled', 'disabled');
+function disableButton(submitButtonSelector, config) {
+    submitButtonSelector.classList.add(config.inactiveButtonClass)
+    submitButtonSelector.setAttribute('disabled', 'disabled');
 };
 
-const removeButton = (button) => {
-    button.classList.remove(validationConfig.inactiveButtonClass);
-    button.removeAttribute('disabled');
+function removeButton(submitButtonSelector, config) {
+    submitButtonSelector.classList.remove(config.inactiveButtonClass)
+    submitButtonSelector.removeAttribute('disabled');
 }
 
 
 
-function toggleButtonState(inputs, button) {
-    const hasErrors = inputs.some(input => !input.validity.valid);
+function toggleButtonState(inputSelector, submitButtonSelector, config) {
+    const hasErrors = inputSelector.some(inputSelector => !inputSelector.validity.valid);
     if (hasErrors) {
-        disableButton(button);
+        disableButton(submitButtonSelector, config);
     } else {
-        removeButton(button);
+        removeButton(submitButtonSelector, config);
     }
 }
 
-function validateInput(form, input, config) {
-    const error = form.querySelector(`#${input.id}-error`);
-    if (!input.validity.valid) {
-        input.classList.add(config.inputErrorClass)
-        input.classList.add(config.errorClass)
-        error.textContent = input.validationMessage
+function validateInput(formSelector, inputSelector, config) {
+    const error = formSelector.querySelector(`#${inputSelector.id}-error`);
+    if (!inputSelector.validity.valid) {
+        inputSelector.classList.add(config.inputErrorClass)
+        inputSelector.classList.add(config.errorClass)
+        error.textContent = inputSelector.validationMessage
     } else {
-        input.classList.remove(config.inputErrorClass)
-        input.classList.remove(config.errorClass)
+        inputSelector.classList.remove(config.inputErrorClass)
+        inputSelector.classList.remove(config.errorClass)
         error.textContent = ''
     }
 }
 
-function sethandlers(form, config) {
-    const inputs = Array.from(form.querySelectorAll(config.inputSelector));
-    const button = form.querySelector(config.submitButtonSelector);
+function sethandlers(formSelector, config) {
+    const inputs = Array.from(formSelector.querySelectorAll(config.inputSelector));
+    const button = formSelector.querySelector(config.submitButtonSelector);
     toggleButtonState(inputs, button, config);
-    inputs.forEach((input) => {
-        input.addEventListener('input', () => {
-            validateInput(form, input, config)
+    inputs.forEach((inputSelector) => {
+        inputSelector.addEventListener('input', () => {
+            validateInput(formSelector, inputSelector, config)
             toggleButtonState(inputs, button, config)
         })
     });
@@ -57,11 +55,9 @@ function sethandlers(form, config) {
 
 function enableValidation(config) {
     const forms = Array.from(document.querySelectorAll(config.formSelector))
-    forms.forEach((form) => {
-        sethandlers(form, config);
+    forms.forEach((formSelector) => {
+        sethandlers(formSelector, config);
     })
 }
-
-
 
 enableValidation(validationConfig)

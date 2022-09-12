@@ -1,4 +1,3 @@
-import { disableButton } from './validate.js';
 const actionEditBtn = document.querySelector('.profile__btn-edit');
 const actionAddCard = document.querySelector('.profile__btn-add')
 const modalWindowName = document.querySelector('.popup_type_name');
@@ -16,6 +15,7 @@ const template = document.querySelector('.template-card');
 const openMyFormAddCard = document.querySelector('.popup__form_card');
 const inputNameMesto = document.querySelector('.popup__input_field_mesto');
 const inputFiledImg = document.querySelector('.popup__input_field_img');
+const buttonDisable = modalWindowAdd.querySelector('.popup__btn-save');
 const initialCards = [{
         name: 'Архыз',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -79,7 +79,6 @@ function handleAddCard(evt) {
     evt.preventDefault();
     listContainer.prepend(getElement(({ name: inputNameMesto.value, link: inputFiledImg.value })));
     closePopup(modalWindowAdd);
-    openMyFormAddCard.reset();
 }
 
 function likeCard(evt) {
@@ -89,32 +88,28 @@ function likeCard(evt) {
 renderCard();
 
 const handleEscUp = (evt) => {
-    const activepopup = document.querySelector('.popup_opened')
     if (evt.key === 'Escape') {
+        const activepopup = document.querySelector('.popup_opened')
         closePopup(activepopup);
     };
 };
 
-
-const ClosePopupClikOverlay = (evt) => {
+const ClikOverlayClosePopup = (evt) => {
     if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__btn-close')) {
         closePopup(evt.currentTarget);
     };
-
 }
 
 function openPopup(popup) {
     document.addEventListener('keydown', handleEscUp);
-    popup.addEventListener('click', ClosePopupClikOverlay)
+    popup.addEventListener('click', ClikOverlayClosePopup)
     popup.classList.add('popup_opened')
-
 }
 
 function closePopup(popup) {
     document.removeEventListener('keydown', handleEscUp);
-    popup.removeEventListener('click', ClosePopupClikOverlay)
+    popup.removeEventListener('click', ClikOverlayClosePopup)
     popup.classList.remove('popup_opened');
-
 }
 
 
@@ -125,21 +120,16 @@ function openPopupUserName(evt) {
     closePopup(modalWindowName);
 }
 
-
-
 actionEditBtn.addEventListener('click', () => {
     nameInput.value = popupUserName.textContent;
     nameHobby.value = popupUserHobby.textContent;
     openPopup(modalWindowName)
 });
 
-
-
-
 actionAddCard.addEventListener('click', () => {
     openPopup(modalWindowAdd);
-    const butt = modalWindowAdd.querySelector('.popup__btn-save')
-    disableButton(butt);
+    disableButton(buttonDisable, validationConfig);
+    openMyFormAddCard.reset();
 });
 
 
