@@ -94,7 +94,7 @@ const handleEscUp = (evt) => {
     };
 };
 
-const ClikOverlayClosePopup = (evt) => {
+const clikOverlayClosePopup = (evt) => {
     if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__btn-close')) {
         closePopup(evt.currentTarget);
     };
@@ -102,13 +102,13 @@ const ClikOverlayClosePopup = (evt) => {
 
 function openPopup(popup) {
     document.addEventListener('keydown', handleEscUp);
-    popup.addEventListener('click', ClikOverlayClosePopup)
+    popup.addEventListener('click', clikOverlayClosePopup)
     popup.classList.add('popup_opened')
 }
 
 function closePopup(popup) {
     document.removeEventListener('keydown', handleEscUp);
-    popup.removeEventListener('click', ClikOverlayClosePopup)
+    popup.removeEventListener('click', clikOverlayClosePopup)
     popup.classList.remove('popup_opened');
 }
 
